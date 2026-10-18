@@ -1,0 +1,10 @@
+{
+  "name": "franceza",
+  "version": "1.0.0",
+  "description": "Cahier de français: lecții, exerciții și test simulat pentru acordul participiului trecut și timpurile verbale.",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node src/test-conjugare.cjs"
+  }
+}
