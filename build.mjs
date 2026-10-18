@@ -1,6 +1,6 @@
 // Construiește index.html (pagină completă, de sine stătătoare) din fișierele din src/.
 // Rulare: node build.mjs
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -43,5 +43,8 @@ ${app}
 </body>
 </html>
 `;
+// index.html în rădăcină (deschis direct / GitHub Pages) și public/index.html (folderul pe care îl servește Vercel).
 writeFileSync(join(root, 'index.html'), html);
-console.log('index.html', (html.length / 1024).toFixed(0) + ' KB');
+mkdirSync(join(root, 'public'), { recursive: true });
+writeFileSync(join(root, 'public', 'index.html'), html);
+console.log('index.html + public/index.html', (html.length / 1024).toFixed(0) + ' KB');

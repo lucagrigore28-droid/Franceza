@@ -15,6 +15,8 @@ Site interactiv de pregătire pentru testul de franceză (clasa a 11-a, Unitatea
 
 `index.html` este un fișier de sine stătător. Îl deschizi direct în browser sau îl publici cu GitHub Pages (Settings → Pages → Deploy from a branch → `main` / root). Fonturile se încarcă de la Google Fonts; fără internet se folosesc fonturile sistemului.
 
+**Vercel:** proiectul se publică fără setări suplimentare. `vercel.json` rulează `node build.mjs`, care generează `public/index.html`, iar Vercel servește folderul `public`.
+
 Progresul (lecții bifate, scoruri, greșeli) se salvează în `localStorage`, doar în browserul tău.
 
 ## Dezvoltare
@@ -22,7 +24,7 @@ Progresul (lecții bifate, scoruri, greșeli) se salvează în `localStorage`, d
 Sursele sunt în `src/`; `index.html` se generează din ele.
 
 ```bash
-node build.mjs          # reconstruiește index.html
+node build.mjs          # reconstruiește index.html (și public/index.html)
 node src/test-conjugare.cjs   # testează motorul de conjugare (199 de forme de referință)
 ```
 
